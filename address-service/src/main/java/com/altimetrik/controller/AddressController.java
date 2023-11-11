@@ -1,6 +1,7 @@
 package com.altimetrik.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,9 @@ public class AddressController {
 
 	@Autowired
 	AddressService addressService;
+	
+	@Value("${address.test}")
+	private String test;
 
 	@PostMapping("/create")
 	public AddressResponse createAddress (@RequestBody CreateAddressRequest createAddressRequest) {
@@ -27,6 +31,11 @@ public class AddressController {
 	@GetMapping("/getById/{id}")
 	public AddressResponse getById(@PathVariable long id) {
 		return addressService.getById(id);
+	}
+	
+	@GetMapping("/test")
+	public String test () {
+		return test;
 	}
 	
 }
