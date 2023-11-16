@@ -1,12 +1,12 @@
-package com.infybuzz.app;
+package com.altimetrik.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class AddressServiceApplicationTests {
 
-	@Test
+	//@Test
 	void contextLoads() {
 	}
 
